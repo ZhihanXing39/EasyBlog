@@ -1,0 +1,19 @@
+.box form {
+    width: 600px;
+    height: 500px;
+    /* background-color: violet; */
+    margin: 0 auto;
+}
+
+.box form input {
+    width: 600px;
+}
+
+.box form textarea {
+    width: 600px;
+    height: 400px;
+}
+
+.box form button {
+    width: 80px;
+}

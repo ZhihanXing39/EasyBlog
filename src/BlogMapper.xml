@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.zjku.mapper.BlogMapper">
+    <select id="selectAll" resultType="edu.zjku.bean.Blog">
+        SELECT * FROM blog
+    </select>
+    <select id="selectPass" resultType="edu.zjku.bean.Blog">
+        SELECT * FROM `blog` WHERE audit = 1
+    </select>
+    <insert id="insert" parameterType="edu.zjku.bean.Blog">
+        INSERT INTO blog ( title, text, `user`, time , audit)VALUES(#{title},#{text},#{user},NOW(),0)
+    </insert>
+    <delete id="delete" parameterType="edu.zjku.bean.Blog">
+        DELETE FROM blog WHERE pid = #{pid}
+    </delete>
+    <update id="update" parameterType="edu.zjku.bean.Blog">
+        UPDATE blog SET title = #{title},text = #{text} WHERE pid = #{pid}
+    </update>
+</mapper>

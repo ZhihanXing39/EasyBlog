@@ -1,0 +1,11 @@
+.box {
+    padding: 50px;
+}
+
+.box p {
+    color: white;
+    font-size: 16px;
+    text-align: justify;
+    text-indent: 32px;
+    line-height: 2;
+}

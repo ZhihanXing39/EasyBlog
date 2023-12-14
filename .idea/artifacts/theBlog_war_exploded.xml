@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="theBlog:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/theBlog_war_exploded</output-path>
+    <root id="archive" name="theBlog_war exploded.war">
+      <element id="javaee-facet-resources" facet="theBlog/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="theBlog" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+        </element>
+      </element>
+      <element id="dir-copy" path="$PROJECT_DIR$" />
+    </root>
+  </artifact>
+</component>
