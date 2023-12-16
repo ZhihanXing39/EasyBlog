@@ -40,6 +40,33 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
+    public List<Blog> selectUnpass() {
+        List<Blog> list = null;
+        InputStream is = null;
+        SqlSession sql = null;
+        try {
+            is = Resources.getResourceAsStream("mybatisConfig.xml");
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+            sql = sqlSessionFactory.openSession(true);
+            BlogMapper mapper = sql.getMapper(BlogMapper.class);
+            list = mapper.selectUnpass();
+        } catch (IOException e) {
+            e.printStackTrace();
+            if (sql != null) {
+                sql.close();
+            }
+            if (is != null) {
+                try {
+                    is.close();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+        }
+        return list;
+    }
+
+    @Override
     public List<Blog> selectPass() {
         List<Blog> list = null;
         InputStream is = null;

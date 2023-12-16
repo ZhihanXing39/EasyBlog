@@ -7,6 +7,8 @@ import java.util.List;
 public interface BlogMapper {
     //查询所有博客
     List<Blog> selectAll();
+    //查询未通过审核的博客
+    List<Blog> selectUnpass();
     //查询通过审核的博客
     List<Blog> selectPass();
     //添加新博客

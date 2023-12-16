@@ -19,6 +19,14 @@ public class BlogTest {
         }
     }
     @Test
+    public void selectUnpass(){
+        List<Blog> lists = service.selectUnpass();
+        for (Blog b:lists
+             ) {
+            System.out.println(b);
+        }
+    }
+    @Test
     public void selectPass(){
         List<Blog> blogs = service.selectPass();
         for (Blog b:blogs

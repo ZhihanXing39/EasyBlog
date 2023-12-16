@@ -27,6 +27,9 @@
             <li>
                 <a href="register.jsp"><img src="images/register.png" alt="" class="navpic">登录/注册</a>
             </li>
+            <li>
+                <a href="audit.jsp">审核</a>
+            </li>
         </ul>
     </nav>
 </header>
