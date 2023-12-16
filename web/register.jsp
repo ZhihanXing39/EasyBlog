@@ -12,7 +12,7 @@
     <!-- 用来处理登录的信息 -->
     <div class="login">
         <p>在此登录</p>
-        <form action="/theBlog/loginServlet" method="get" autocomplete="off">
+        <form action="/theBlog/loginServlet" method="post" autocomplete="off">
             用户名：<input type="text" name="username" placeholder="请输入用户名" required><br> 密码：
             <input type="password" name="password" placeholder="请输入密码" required><br>
             <button type="submit">登录</button>
@@ -21,7 +21,7 @@
     <!-- 用来处理注册的信息 -->
     <div class="register">
         <p>没有账号？立即注册</p>
-        <form action="/theBlog/registerServlet" method="get" autocomplete="off">
+        <form action="/theBlog/registerServlet" method="post" autocomplete="off">
             用户名：<input type="text" name="username" placeholder="请输入用户名" required><br>
             密码：<input type="password" name="password" placeholder="请输入密码" id="password" required><br>
             确认密码：<input type="password" name="passwordc" placeholder="请确认密码" id="confirm_password" required><br>

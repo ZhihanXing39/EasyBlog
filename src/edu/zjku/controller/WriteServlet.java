@@ -21,7 +21,7 @@ public class WriteServlet extends HttpServlet {
         BlogService service = new BlogServiceImpl();
         HttpSession session = req.getSession();
         Object username = session.getAttribute("username");
-        if (username != null) {
+        if (username != null) {//判断用户是否登录
             //获取前台输入的信息
             String title = req.getParameter("title");
             String text = req.getParameter("text");
@@ -37,8 +37,8 @@ public class WriteServlet extends HttpServlet {
             //显示提示信息
             resp.getWriter().write("保存成功！审核通过后显示");
             resp.setHeader("Refresh","2;URL=/theBlog/index.jsp");
-        }else {
-            resp.getWriter().write("请先登录！");
+        }else {//没有登录则让其返回主页
+            resp.getWriter().write("请先登录！2秒后返回首页");
             resp.setHeader("Refresh","2;URL=/theBlog/index.jsp");
         }
     }
