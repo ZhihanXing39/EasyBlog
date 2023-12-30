@@ -21,7 +21,7 @@
     <!-- 用来处理注册的信息 -->
     <div class="register">
         <p>没有账号？立即注册</p>
-        <form action="/theBlog/registerServlet" method="post" autocomplete="off">
+        <form action="/theBlog/registerServlet" method="post" autocomplete="off" accept-charset="UTF-8">
             用户名：<input type="text" name="username" placeholder="请输入用户名" required><br>
             密码：<input type="password" name="password" placeholder="请输入密码" id="password" required><br>
             确认密码：<input type="password" name="passwordc" placeholder="请确认密码" id="confirm_password" required><br>

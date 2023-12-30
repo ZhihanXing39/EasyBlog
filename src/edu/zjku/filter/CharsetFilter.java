@@ -7,7 +7,9 @@ import java.io.IOException;
 public class CharsetFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        //处理乱码
+        //处理请求的乱码
+        servletRequest.setCharacterEncoding("UTF-8");
+        //处理响应的乱码
         servletResponse.setContentType("text/html;charset=UTF-8");
         //放行
         filterChain.doFilter(servletRequest, servletResponse);

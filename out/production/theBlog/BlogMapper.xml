@@ -6,6 +6,9 @@
     <select id="selectAll" resultType="edu.zjku.bean.Blog">
         SELECT * FROM blog
     </select>
+    <select id="selectUnpass" resultType="edu.zjku.bean.Blog">
+        SELECT * FROM blog WHERE audit=0
+    </select>
     <select id="selectPass" resultType="edu.zjku.bean.Blog">
         SELECT * FROM `blog` WHERE audit = 1
     </select>
