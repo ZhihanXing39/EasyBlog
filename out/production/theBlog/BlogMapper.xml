@@ -12,6 +12,9 @@
     <select id="selectPass" resultType="edu.zjku.bean.Blog">
         SELECT * FROM `blog` WHERE audit = 1
     </select>
+    <select id="selectById" resultType="edu.zjku.bean.Blog" parameterType="java.lang.String">
+        SELECT * FROM `blog` WHERE pid = #{pid}
+    </select>
     <insert id="insert" parameterType="edu.zjku.bean.Blog">
         INSERT INTO blog ( title, text, `user`, time , audit)VALUES(#{title},#{text},#{user},NOW(),0)
     </insert>

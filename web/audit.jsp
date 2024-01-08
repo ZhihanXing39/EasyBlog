@@ -41,7 +41,9 @@
         </tr>
         <tr>
             <td>
-                <button>通过</button>
+                <form action="/theBlog/allowServlet" method="get" autocomplete="off">
+                    <button type="submit" name="blogId" value="<%=blog.getPid()%>" id="<%=blog.getPid()%>">通过</button>
+                </form>
             </td>
         </tr>
     </table>
@@ -52,6 +54,10 @@
                 response.getWriter().write("权限不足！2秒后返回首页");
                 response.setHeader("Refresh", "2;URL=/theBlog/index.jsp");
             }
+        } else {
+            //非管理员，强制返回首页
+            response.getWriter().write("权限不足！2秒后返回首页");
+            response.setHeader("Refresh", "2;URL=/theBlog/index.jsp");
         }
     %>
 

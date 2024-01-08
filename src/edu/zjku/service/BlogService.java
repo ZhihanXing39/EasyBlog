@@ -11,6 +11,8 @@ public interface BlogService {
     List<Blog> selectUnpass();
     //查询通过审核的博客
     List<Blog> selectPass();
+    //根据id查询博客
+    Blog selectById(String pid);
     //添加新博客
     void insert(Blog blog);
     //删除单篇博客

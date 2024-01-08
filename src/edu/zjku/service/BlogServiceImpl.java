@@ -94,6 +94,33 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
+    public Blog selectById(String pid) {
+        Blog blog = null;
+        InputStream is = null;
+        SqlSession sql = null;
+        try {
+            is = Resources.getResourceAsStream("mybatisConfig.xml");
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+            sql = sqlSessionFactory.openSession(true);
+            BlogMapper mapper = sql.getMapper(BlogMapper.class);
+            blog = mapper.selectById(pid);
+        } catch (IOException e) {
+            e.printStackTrace();
+            if (sql != null) {
+                sql.close();
+            }
+            if (is != null) {
+                try {
+                    is.close();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+        }
+        return blog;
+    }
+
+    @Override
     public void insert(Blog blog) {
         InputStream is = null;
         SqlSession sql = null;
