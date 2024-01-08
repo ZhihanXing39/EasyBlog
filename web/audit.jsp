@@ -1,13 +1,7 @@
 <%@ page import="edu.zjku.bean.Blog" %>
 <%@ page import="edu.zjku.service.BlogService" %>
 <%@ page import="java.util.List" %>
-<%@ page import="edu.zjku.service.BlogServiceImpl" %><%--
-  Created by IntelliJ IDEA.
-  User: xing
-  Date: 2023/12/16
-  Time: 21:05
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="edu.zjku.service.BlogServiceImpl" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,16 +12,43 @@
 <body>
 <jsp:include page="header.jsp"/>
 <div class="box">
-    <%BlogService service = new BlogServiceImpl();%>
-    <%List<Blog> blogs =service.selectUnpass();%>
-    <%for(Blog blog:blogs){%>
+    <%--    判断用户是否为管理员--%>
+    <%
+        Object username = session.getAttribute("username");
+        if (username != null) {
+            if (username.equals("root")) {
+                //展示审核内容，执行操作
+                BlogService service = new BlogServiceImpl();
+                List<Blog> blogs = service.selectUnpass();
+                for (Blog blog : blogs) {%>
     <table>
-        <tr><td class="title"><%=blog.getTitle()%></td></tr>
-        <tr><td class="text"><%=blog.getText()%></td></tr>
-        <tr><td class="user"><%=blog.getUser()%></td></tr>
-        <tr><td class="time"><%=blog.getTime()%></td></tr>
+        <tr>
+            <td class="title"><%=blog.getTitle()%>
+            </td>
+        </tr>
+        <tr>
+            <td class="text"><%=blog.getText()%>
+            </td>
+        </tr>
+        <tr>
+            <td class="user"><%=blog.getUser()%>
+            </td>
+        </tr>
+        <tr>
+            <td class="time"><%=blog.getTime()%>
+            </td>
+        </tr>
     </table>
-    <%}%>
+    <%
+                }
+            } else {
+                //非管理员，强制返回首页
+                response.getWriter().write("权限不足！2秒后返回首页");
+                response.setHeader("Refresh", "2;URL=/theBlog/index.jsp");
+            }
+        }
+    %>
+
 </div>
 <jsp:include page="footer.jsp"/>
 </body>
