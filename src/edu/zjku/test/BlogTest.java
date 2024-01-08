@@ -67,4 +67,10 @@ public class BlogTest {
         blog.setPid(2);
         service.update(blog);
     }
+    @Test
+    public void allow(){
+        Blog blog = new Blog();
+        blog.setPid(5);
+        service.allow(blog);
+    }
 }

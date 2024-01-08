@@ -17,4 +17,6 @@ public interface BlogMapper {
     void delete(Blog blog);
     //修改博客
     void update(Blog blog);
+    //审核通过博客
+    void allow(Blog blog);
 }

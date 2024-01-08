@@ -167,4 +167,29 @@ public class BlogServiceImpl implements BlogService {
             }
         }
     }
+
+    @Override
+    public void allow(Blog blog) {
+        InputStream is = null;
+        SqlSession sql = null;
+        try {
+            is = Resources.getResourceAsStream("mybatisConfig.xml");
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+            sql = sqlSessionFactory.openSession(true);
+            BlogMapper mapper = sql.getMapper(BlogMapper.class);
+            mapper.allow(blog);
+        } catch (IOException e) {
+            e.printStackTrace();
+            if (sql != null) {
+                sql.close();
+            }
+            if (is != null) {
+                try {
+                    is.close();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+        }
+    }
 }
