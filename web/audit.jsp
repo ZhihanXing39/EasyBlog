@@ -8,6 +8,7 @@
     <title>审核博客</title>
     <link rel="stylesheet" href="style/public.css">
     <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/audit.css">
 </head>
 <body>
 <jsp:include page="header.jsp"/>
@@ -36,6 +37,11 @@
         </tr>
         <tr>
             <td class="time"><%=blog.getTime()%>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button>通过</button>
             </td>
         </tr>
     </table>

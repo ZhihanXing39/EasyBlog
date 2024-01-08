@@ -21,4 +21,7 @@
     <update id="update" parameterType="edu.zjku.bean.Blog">
         UPDATE blog SET title = #{title},text = #{text} WHERE pid = #{pid}
     </update>
+    <update id="allow" parameterType="edu.zjku.bean.Blog">
+        UPDATE blog SET audit = 1 WHERE pid = #{pid}
+    </update>
 </mapper>
