@@ -13,9 +13,7 @@
 </head>
 <body>
 <footer>
-    <p>版权所属 ZhihanXing</p>
-    <p>隐私政策</p>
-    <p>联系方式 xxx@xx</p>
+    <p>版权所属&copy ZhihanXing</p>
 </footer>
 </body>
 </html>
