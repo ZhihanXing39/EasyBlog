@@ -12,7 +12,6 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-<jsp:include page="ad.jsp"/>
 <div class="box">
     <%BlogService service = new BlogServiceImpl();%>
     <%List<Blog> blogs =service.selectPass();%>

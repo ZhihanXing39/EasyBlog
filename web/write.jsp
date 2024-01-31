@@ -14,7 +14,6 @@
         <button type="submit">提交</button>
     </form>
 </div>
-<jsp:include page="ad.jsp"/>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>

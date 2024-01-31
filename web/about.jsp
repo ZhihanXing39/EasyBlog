@@ -15,7 +15,6 @@
         IDEA进行开发，由servlet获取前台所需要的数据并进行处理，使用Mybatis连接到MySQL进行后台数据存储。</p>
     <p>本网站的所有博客观点仅代表博主个人观点，与网站所有者无关！</p>
 </div>
-<jsp:include page="ad.jsp"/>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>
