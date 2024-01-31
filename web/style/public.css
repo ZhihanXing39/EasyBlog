@@ -8,16 +8,6 @@
 }
 
 
-/* 浮动设置 */
-
-.leftfloat {
-    float: left;
-}
-
-body {
-    background-color: #ecf0f1;
-}
-
 header {
     height: 100px;
     background-color: #3498db;
@@ -72,27 +62,6 @@ header nav ul li {
     padding: 20px;
 }
 
-.ad {
-    width: 150px;
-    height: 400px;
-    background-color: tomato;
-    position: fixed;
-    left: 0;
-    top: 15%;
-}
-
-.ad .x {
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 20px;
-    line-height: 20px;
-    text-align: center;
-    cursor: pointer;
-}
 
 footer {
     height: 80px;
