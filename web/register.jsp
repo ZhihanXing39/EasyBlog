@@ -8,7 +8,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-<div class="box">
+<main>
     <!-- 用来处理登录的信息 -->
     <div class="login">
         <p>在此登录</p>
@@ -28,7 +28,7 @@
             <button type="submit">注册</button>
         </form>
     </div>
-</div>
+</main>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>

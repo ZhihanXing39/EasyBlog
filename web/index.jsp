@@ -12,18 +12,30 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-<div class="box">
+<main>
     <%BlogService service = new BlogServiceImpl();%>
-    <%List<Blog> blogs =service.selectPass();%>
-    <%for(Blog blog:blogs){%>
+    <%List<Blog> blogs = service.selectPass();%>
+    <%for (Blog blog : blogs) {%>
     <table>
-        <tr><td class="title"><%=blog.getTitle()%></td></tr>
-        <tr><td class="text"><%=blog.getText()%></td></tr>
-        <tr><td class="user"><%=blog.getUser()%></td></tr>
-        <tr><td class="time"><%=blog.getTime()%></td></tr>
+        <tr>
+            <td class="title"><%=blog.getTitle()%>
+            </td>
+        </tr>
+        <tr>
+            <td class="text"><%=blog.getText()%>
+            </td>
+        </tr>
+        <tr>
+            <td class="user"><%=blog.getUser()%>
+            </td>
+        </tr>
+        <tr>
+            <td class="time"><%=blog.getTime()%>
+            </td>
+        </tr>
     </table>
     <%}%>
-</div>
+</main>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>

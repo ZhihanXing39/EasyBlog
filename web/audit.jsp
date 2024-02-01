@@ -12,7 +12,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-<div class="box">
+<main>
     <%--    判断用户是否为管理员--%>
     <%
         Object username = session.getAttribute("username");
@@ -60,8 +60,7 @@
             response.setHeader("Refresh", "2;URL=/theBlog/index.jsp");
         }
     %>
-
-</div>
+</main>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>

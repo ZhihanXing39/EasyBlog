@@ -7,13 +7,13 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-<div class="box">
+<main>
     <form action="/theBlog/writeServlet" method="get" autocomplete="off">
         标题：<input type="text" name="title" required><br> 内容：
         <textarea name="text" id="" cols="30" rows="10" required></textarea>
         <button type="submit">提交</button>
     </form>
-</div>
+</main>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>

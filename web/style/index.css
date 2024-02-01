@@ -1,29 +1,29 @@
-.box table {
+main table {
     width: 600px;
     padding: 0 75px;
 }
 
-.box table .title,
-.box table .text,
-.box table .user,
-.box table .time {
+main table .title,
+main table .text,
+main table .user,
+main table .time {
     display: block;
     width: 600px;
     background-color: #ADD8E6;
 }
 
-.box table .title {
+main table .title {
     text-align: center;
     font-size: 20px;
     font-weight: 600;
 }
 
-.box table .text {
+main table .text {
     font-size: 14pt;
     white-space: pre-wrap;
 }
 
-.box table .user,
-.box table .time {
+main table .user,
+main table .time {
     text-align: right;
 }
