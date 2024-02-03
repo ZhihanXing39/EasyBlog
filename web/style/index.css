@@ -1,6 +1,6 @@
 main table {
-    width: 600px;
-    padding: 0 75px;
+    width: 6rem;
+    padding: 0 .75rem;
 }
 
 main table .title,
@@ -8,13 +8,13 @@ main table .text,
 main table .user,
 main table .time {
     display: block;
-    width: 600px;
+    width: 6rem;
     background-color: #ADD8E6;
 }
 
 main table .title {
     text-align: center;
-    font-size: 20px;
+    font-size: .2rem;
     font-weight: 600;
 }
 

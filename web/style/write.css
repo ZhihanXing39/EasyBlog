@@ -1,19 +1,18 @@
 .box form {
-    width: 600px;
-    height: 500px;
-    /* background-color: violet; */
+    width: 6rem;
+    height: 5rem;
     margin: 0 auto;
 }
 
 .box form input {
-    width: 600px;
+    width: 6rem;
 }
 
 .box form textarea {
-    width: 600px;
-    height: 400px;
+    width: 6rem;
+    height: 4rem;
 }
 
 .box form button {
-    width: 80px;
+    width: .8rem;
 }
