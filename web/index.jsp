@@ -8,15 +8,18 @@
     <title>我的博客主页</title>
     <link rel="stylesheet" href="style/public.css">
     <link rel="stylesheet" href="style/index.css">
-    <script src="script/ad.js" async></script>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
 <main>
+    <%
+        int pageNum = 1;
+        int linesPerPage = 3;
+    %>
     <%BlogService service = new BlogServiceImpl();%>
-    <%List<Blog> blogs = service.selectPass();%>
-    <%for (Blog blog : blogs) {%>
+    <%List<Blog> blogs = service.selectByPage(pageNum,linesPerPage);%>
     <table>
+    <%for (Blog blog : blogs) {%>
         <tr>
             <td class="title"><%=blog.getTitle()%>
             </td>
@@ -33,8 +36,13 @@
             <td class="time"><%=blog.getTime()%>
             </td>
         </tr>
-    </table>
     <%}%>
+    </table>
+    <div class="page">
+        <a href="">上一页</a>
+        <span><%=pageNum%></span>
+        <a href="<%pageNum += 1;%>">下一页</a>
+    </div>
 </main>
 <jsp:include page="footer.jsp"/>
 </body>

@@ -13,6 +13,60 @@ import java.util.List;
 
 public class BlogServiceImpl implements BlogService {
     @Override
+    public int selectCount() {
+        int sumBlog;
+        InputStream is = null;
+        SqlSession sql = null;
+        try {
+            is = Resources.getResourceAsStream("mybatisConfig.xml");
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+            sql = sqlSessionFactory.openSession(true);
+            BlogMapper mapper=sql.getMapper(BlogMapper.class);
+            sumBlog=mapper.selectCount();
+        } catch (IOException e) {
+            if (sql!=null){
+                sql.close();
+            }
+            if (is!=null){
+                try {
+                    is.close();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+            throw new RuntimeException(e);
+        }
+        return sumBlog;
+    }
+
+    @Override
+    public List<Blog> selectByPage(int pageNumber,int linesPerPage) {
+        List<Blog> list = null;
+        InputStream is = null;
+        SqlSession sql = null;
+        try {
+            is = Resources.getResourceAsStream("mybatisConfig.xml");
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+            sql = sqlSessionFactory.openSession(true);
+            BlogMapper mapper = sql.getMapper(BlogMapper.class);
+            list = mapper.selectByPage((pageNumber-1)*linesPerPage,linesPerPage);
+        } catch (IOException e) {
+            e.printStackTrace();
+            if (sql != null) {
+                sql.close();
+            }
+            if (is != null) {
+                try {
+                    is.close();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+        }
+        return list;
+    }
+
+    @Override
     public List<Blog> selectAll() {
         List<Blog> list = null;
         InputStream is = null;

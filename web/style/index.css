@@ -9,7 +9,6 @@ main table .user,
 main table .time {
     display: block;
     width: 6rem;
-    background-color: #ADD8E6;
 }
 
 main table .title {

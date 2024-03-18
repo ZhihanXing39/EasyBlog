@@ -5,6 +5,10 @@ import edu.zjku.bean.Blog;
 import java.util.List;
 
 public interface BlogService {
+    //查询博客数量
+    int selectCount();
+    //分页查询博客
+    List<Blog> selectByPage(int pageNumber,int linesPerPage);
     //查询所有博客
     List<Blog> selectAll();
     //查询未通过审核的博客

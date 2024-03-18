@@ -3,7 +3,6 @@
 <head>
     <title>写博客</title>
     <link rel="stylesheet" href="style/write.css"/>
-    <script src="script/ad.js" async></script>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
