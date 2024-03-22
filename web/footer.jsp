@@ -9,11 +9,24 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="style/public.css">
+    <style>
+        footer {
+            height: .8rem;
+            background-color: #333333;
+            color: white;
+        }
+
+        footer p {
+            text-align: center;
+            font-size: .16rem;
+            line-height: 30px;
+        }
+    </style>
 </head>
 <body>
 <footer>
     <p>版权所属&copy ZhihanXing</p>
+    <p>powered by Servlet & Mybatis</p>
 </footer>
 </body>
 </html>

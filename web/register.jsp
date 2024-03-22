@@ -3,7 +3,7 @@
 <head>
     <title>登录和注册</title>
     <link rel="stylesheet" href="style/register.css"/>
-    <script src="script/ad.js" async></script>
+    <link rel="stylesheet" href="style/public.css">
     <script src="script/confirm_password.js" async></script>
 </head>
 <body>
