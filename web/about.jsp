@@ -3,6 +3,7 @@
 <head>
     <title>关于我们</title>
     <link rel="stylesheet" href="style/about.css"/>
+    <link rel="stylesheet" href="style/public.css">
 </head>
 <body>
 <jsp:include page="header.jsp"/>

@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>写博客</title>
+    <link rel="stylesheet" href="style/public.css">
     <link rel="stylesheet" href="style/write.css"/>
 </head>
 <body>
