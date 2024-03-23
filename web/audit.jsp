@@ -58,7 +58,7 @@
                 console.log(error.toJSON());
             })
             .finally(() => {
-                location.reload();
+                location.href = "/theBlog/index.jsp";
             });
     }
 
