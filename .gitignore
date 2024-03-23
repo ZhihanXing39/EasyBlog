@@ -1,3 +1,4 @@
 out/*
 src/jdbc.properties
 src/edu/zjku/test/*
+.idea
