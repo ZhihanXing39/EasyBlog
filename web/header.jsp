@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Title</title>
+    <script src="https://unpkg.zhimg.com/axios/dist/axios.min.js"></script>
     <style>
         * {
             padding: 0;
@@ -74,7 +75,7 @@
                 <a href="index.jsp"><img src="images/index.png" alt="" class="navpic">首页</a>
             </li>
             <li>
-                <a href="/theBlog/selectServlet">看博客</a>
+                <img src="images/read.png" alt=""><a href="/theBlog/selectServlet">看博客</a>
             </li>
             <li>
                 <a href="write.jsp"><img src="images/write.png" alt="" class="navpic">写博客</a>
@@ -87,6 +88,9 @@
             </li>
             <li>
                 <a href="/theBlog/isRoot"><img src="images/audit.png" alt="">审核</a>
+            </li>
+            <li>
+                <a href="/theBlog/exitServlet">退出</a>
             </li>
         </ul>
     </nav>

@@ -7,7 +7,6 @@
 <head>
     <title>审核博客</title>
     <link rel="stylesheet" href="style/public.css">
-    <script src="https://unpkg.zhimg.com/axios/dist/axios.min.js"></script>
     <style>
         .box p:nth-of-type(1) {
             text-align: center;
