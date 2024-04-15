@@ -1,23 +1,100 @@
-/* 初始化设置 */
-
-* {
+body {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    /* 定义两列，第一列占据1份空间，第二列占据2份空间 */
+    grid-template-rows: auto 1fr auto;
+    /* 定义三行，第一行和最后一行高度自适应，第二行占据剩余空间 */
+    grid-template-areas: "header header" "sidebar main" "footer footer";
+    /* 定义每个区域的名称 */
+    height: 100vh;
+    /* 设置整个布局的高度为视口高度 */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    font-size: 100px;
-}
-body{
-    font-size: .16rem;
-}
-main {
-    width: 8rem;
-    min-height: 5rem;
-    background-color: #FAFAFA;
-    margin: 0 auto;
+header {
+    grid-area: header;
+    /* 将头部区域映射到Grid布局中的header区域 */
+    background-color: #00ADB5;
     padding: 20px;
-    font-size: .16rem;
+}
 
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+    color: whitesmoke;
+}
+
+nav ul li:hover {
+    color: orangered;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+main {
+    grid-area: main;
+    /* 将主体区域映射到Grid布局中的main区域 */
+    background-color: #EEEEEE;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+main .box {
+    min-width: 200px;
+    min-height: 200px;
+    padding: 10px;
+    background-color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+aside {
+    grid-area: sidebar;
+    /* 将侧边栏区域映射到Grid布局中的sidebar区域 */
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    /* 设置边框圆角 */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+aside ul {
+    list-style-type: none;
+    /* 去除列表样式 */
+    padding: 0;
+}
+
+
+/* 侧边栏列表项样式 */
+
+aside ul li {
+    margin-bottom: 10px;
+    /* 设置列表项间距 */
+}
+
+
+/* 侧边栏欢迎信息样式 */
+
+aside p {
+    font-weight: 600;
+    /* 设置粗体字 */
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    /* 设置段落底部间距 */
+}
+
+footer {
+    grid-area: footer;
+    /* 将底部区域映射到Grid布局中的footer区域 */
+    background-color: #393E46;
+    color: whitesmoke;
+    padding: 20px;
+    text-align: center;
 }
