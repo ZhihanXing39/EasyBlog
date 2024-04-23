@@ -11,22 +11,7 @@
 <body>
 <jsp:include page="header.jsp"/>
 <main></main>
-<aside>
-    <ul>
-        <li>
-            <p>欢迎您，Zhihan</p>
-        </li>
-        <li>
-            <p><a href="write.jsp">撰写博客</a></p>
-        </li>
-        <li>
-            <p>我的博客</p>
-        </li>
-        <li>
-            <p><a href="/exitServlet"></a>退出登录</p>
-        </li>
-    </ul>
-</aside>
+<jsp:include page="aside.jsp"/>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>

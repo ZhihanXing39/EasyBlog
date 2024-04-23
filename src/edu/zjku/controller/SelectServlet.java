@@ -35,7 +35,7 @@ public class SelectServlet extends HttpServlet {
         }
         //读取数据并封装
         List<Blog> blogs = null;
-        blogs = service.selectByPage(pageNumber, linesPerPage);
+        blogs = service.selectPass();
         //存入会话域给看博客页面使用
         HttpSession session = req.getSession();
         session.setAttribute("blogs", blogs);
