@@ -8,6 +8,9 @@
     <title>审核博客</title>
     <link rel="stylesheet" href="style/public.css">
     <style>
+        main .box{
+            min-height: 200px;
+        }
         .box p:nth-of-type(1) {
             text-align: center;
         }

@@ -23,12 +23,16 @@
             <li>
                 <a href="about.jsp">关于我们</a>
             </li>
+            <%String username=(String) session.getAttribute("username");
+            if (username==null){
+            %>
             <li>
                 <a href="register.jsp">注册</a>
             </li>
             <li>
                 <a href="login.jsp">登录</a>
             </li>
+            <%}%>
         </ul>
     </nav>
 </header>

@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: xing
-  Date: 2024/4/23
-  Time: 16:31
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -14,7 +7,11 @@
 <aside>
     <ul>
         <li>
-            <p>欢迎您，Zhihan</p>
+            <%String username=(String) session.getAttribute("username");
+            if (username!=null){
+            %>
+            <p>欢迎您，<%=username%></p>
+            <%}%>
         </li>
         <li>
             <p><a href="write.jsp">撰写博客</a></p>
@@ -22,8 +19,14 @@
         <li>
             <p>我的博客</p>
         </li>
+        <%if (username!=null){
+            if (username.equals("root")){%>
         <li>
-            <p><a href="/exitServlet"></a>退出登录</p>
+            <p><a href="/theBlog/isRoot">审核</a></p>
+        </li>
+        <%}}%>
+        <li>
+            <p><a href="/theBlog/exitServlet">退出登录</a></p>
         </li>
     </ul>
 </aside>

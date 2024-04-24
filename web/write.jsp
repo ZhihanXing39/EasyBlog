@@ -9,8 +9,10 @@
 <jsp:include page="header.jsp"/>
 <main>
     <form action="/theBlog/writeServlet" method="get" autocomplete="off">
-        标题：<input type="text" name="title" required><br> 内容：
-        <textarea name="text" id="" cols="30" rows="10" required></textarea>
+        <label for="title">标题：</label>
+        <input type="text" name="title" id="title" required>
+        <label for="blogText">内容：</label>
+        <textarea name="text" id="blogText" required></textarea>
         <button type="submit">提交</button>
     </form>
 </main>

@@ -1,28 +1,13 @@
 <%@ page import="java.util.List" %>
-<%@ page import="edu.zjku.bean.Blog" %><%--
-  Created by IntelliJ IDEA.
-  User: xing
-  Date: 2024/3/20
-  Time: 20:58
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="edu.zjku.bean.Blog" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>看博客</title>
     <link rel="stylesheet" href="style/public.css">
     <style>
-        .box p:nth-of-type(1) {
-            text-align: center;
-        }
-
-        .box p:nth-of-type(2) {
-            white-space: pre-wrap;
-        }
-
-        .box p:nth-of-type(3),
-        .box p:nth-of-type(4) {
-            text-align: right;
+        main .box{
+            height: 100px;
         }
     </style>
 </head>
