@@ -1,16 +1,64 @@
+<%@ page import="java.util.List" %>
+<%@ page import="edu.zjku.bean.Comment" %>
+<%@ page import="edu.zjku.bean.Blog" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>博客详情</title>
     <link rel="stylesheet" href="style/public.css"/>
+<%--    <script src="script/randomColor.js"/>--%>
+    <style>
+        .comment {
+            display: flex;
+            align-items: center;
+            margin: 20px auto;
+            padding-left: 20px;
+            width: 100%;
+            height: 50px;
+            color: #fff;
+            line-height: 50px;
+            text-align: center;
+            background: teal;
+            clip-path: polygon(0 0, 88% 0, 88% 35%, 95% 50%, 88% 65%, 88% 100%, 0 100%);
+            border: 1px solid teal;
+        }
+
+        /* CSS */
+        .comment-random-bg {
+            background-color: deepskyblue/* 动态生成的颜色 */;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
 <main>
+    <%--    从会话域获取博客及其评论--%>
+    <%
+        Blog blog = (Blog) session.getAttribute("blogDetail");
+        List<Comment> commentList = (List<Comment>) session.getAttribute("commentList");%>
     <div class="blog">
+        <h2><%=blog.getTitle()%>
+        </h2>
+        <p><%=blog.getText()%>
+        </p>
+        <p><%=blog.getUser()%>
+        </p>
+        <p><%=blog.getTime()%>
+        </p>
     </div>
+    <%
+        for (Comment comment : commentList) {
+    %>
     <div class="comment">
+        <p><%=comment.getContent()%>
+        </p>
+        <p><%=comment.getUsername()%>
+        </p>
+        &nbsp;
+        <p><%=comment.getTime()%>
+        </p>
     </div>
+    <%}%>
 </main>
 <jsp:include page="aside.jsp"/>
 <jsp:include page="footer.jsp"/>

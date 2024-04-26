@@ -57,7 +57,7 @@
             })
             .catch(err => {
                 console.log("发生错误！HTTP状态码：" + err.response.status + " 详细信息：");
-                console.log(error.toJSON());
+                console.log(err.toJSON());
             })
             .finally(() => {
                 location.href = "/theBlog/index.jsp";

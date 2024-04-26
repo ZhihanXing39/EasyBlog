@@ -56,8 +56,6 @@ main {
 
 main .box {
     min-width: 200px;
-    /*height: 100px;*/
-    overflow: hidden;
     padding: 10px;
     background-color: whitesmoke;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
