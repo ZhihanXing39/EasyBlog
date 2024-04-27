@@ -5,6 +5,8 @@
 <head>
     <title>我的博客</title>
     <link rel="stylesheet" href="style/public.css">
+    <script src="https://unpkg.zhimg.com/axios/dist/axios.min.js"></script>
+    <script src="script/deleteBlog.js" async/>
     <style>
         .container{
             white-space: pre-wrap;
@@ -22,8 +24,10 @@
     <%List<Blog> myBlogs = (List<Blog>) session.getAttribute("myBlogs");
     for(Blog blog:myBlogs){%>
     <div class="container">
+        <h2><%=blog.getTitle()%></h2>
         <p><%=blog.getText()%></p>
         <p><%=blog.getTime()%></p>
+        <button data-pid="<%=blog.getPid()%>">删除</button>
     </div>
     <%}%>
 </main>
