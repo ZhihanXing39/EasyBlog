@@ -17,7 +17,7 @@
             <p><a href="write.jsp">撰写博客</a></p>
         </li>
         <li>
-            <p>我的博客</p>
+            <p><a href="/theBlog/myBlogServlet">我的博客</a></p>
         </li>
         <%if (username!=null){
             if (username.equals("root")){%>

@@ -13,6 +13,33 @@ import java.util.List;
 
 public class BlogServiceImpl implements BlogService {
     @Override
+    public List<Blog> selectByUsername(String username) {
+        List<Blog> list = null;
+        InputStream is = null;
+        SqlSession sql = null;
+        try {
+            is = Resources.getResourceAsStream("mybatisConfig.xml");
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+            sql = sqlSessionFactory.openSession(true);
+            BlogMapper mapper = sql.getMapper(BlogMapper.class);
+            list = mapper.selectByUsername(username);
+        } catch (IOException e) {
+            e.printStackTrace();
+            if (sql != null) {
+                sql.close();
+            }
+            if (is != null) {
+                try {
+                    is.close();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+        }
+        return list;
+    }
+
+    @Override
     public int selectCount() {
         int sumBlog;
         InputStream is = null;

@@ -6,8 +6,11 @@
 <head>
     <title>博客详情</title>
     <link rel="stylesheet" href="style/public.css"/>
-<%--    <script src="script/randomColor.js"/>--%>
+    <link rel="stylesheet" href="style/form.css">
     <style>
+        .blog{
+            white-space: pre-wrap;
+        }
         .comment {
             display: flex;
             align-items: center;
@@ -21,11 +24,6 @@
             background: teal;
             clip-path: polygon(0 0, 88% 0, 88% 35%, 95% 50%, 88% 65%, 88% 100%, 0 100%);
             border: 1px solid teal;
-        }
-
-        /* CSS */
-        .comment-random-bg {
-            background-color: deepskyblue/* 动态生成的颜色 */;
         }
     </style>
 </head>
@@ -45,6 +43,12 @@
         </p>
         <p><%=blog.getTime()%>
         </p>
+    </div>
+    <div class="container">
+        <form action="/theBlog/addCommentServlet" method="get" autocomplete="off">
+            <input type="text" name="content" placeholder="请输入评论" required>
+            <button type="submit">提交</button>
+        </form>
     </div>
     <%
         for (Comment comment : commentList) {

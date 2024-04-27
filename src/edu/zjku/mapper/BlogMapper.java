@@ -5,6 +5,8 @@ import edu.zjku.bean.Blog;
 import java.util.List;
 
 public interface BlogMapper {
+    //根据用户名查询
+    List<Blog> selectByUsername(String username);
     //查询博客数量
     int selectCount();
     //分页查询博客

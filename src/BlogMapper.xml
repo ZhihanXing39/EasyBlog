@@ -3,6 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.zjku.mapper.BlogMapper">
+    <select id="selectByUsername" resultType="edu.zjku.bean.Blog" parameterType="java.lang.String">
+        select * from blog where user = #{username};
+    </select>
     <select id="selectCount">
         select count(*) from blog
     </select>
