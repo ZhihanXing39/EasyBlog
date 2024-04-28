@@ -1,6 +1,4 @@
-<%@ page import="java.util.List" %>
-<%@ page import="edu.zjku.bean.Comment" %>
-<%@ page import="edu.zjku.bean.Blog" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -30,19 +28,12 @@
 <body>
 <jsp:include page="header.jsp"/>
 <main>
-    <%--    从会话域获取博客及其评论--%>
-    <%
-        Blog blog = (Blog) session.getAttribute("blogDetail");
-        List<Comment> commentList = (List<Comment>) session.getAttribute("commentList");%>
+    <%--获取博客及其评论--%>
     <div class="blog">
-        <h2><%=blog.getTitle()%>
-        </h2>
-        <p><%=blog.getText()%>
-        </p>
-        <p><%=blog.getUser()%>
-        </p>
-        <p><%=blog.getTime()%>
-        </p>
+        <h2>${sessionScope.blogDetail.title}</h2>
+        <p>${sessionScope.blogDetail.text}</p>
+        <p>${sessionScope.blogDetail.user}</p>
+        <p>${sessionScope.blogDetail.time}</p>
     </div>
     <div class="container">
         <form action="/theBlog/addCommentServlet" method="get" autocomplete="off">
@@ -50,19 +41,13 @@
             <button type="submit">提交</button>
         </form>
     </div>
-    <%
-        for (Comment comment : commentList) {
-    %>
-    <div class="comment">
-        <p><%=comment.getContent()%>
-        </p>
-        <p><%=comment.getUsername()%>
-        </p>
-        &nbsp;
-        <p><%=comment.getTime()%>
-        </p>
-    </div>
-    <%}%>
+    <c:forEach var="comment" items="${commentList}">
+        <div class="comment">
+            <p>${comment.content}</p>
+            <p>用户：${comment.username}</p>
+            <p>时间：${comment.time}</p>
+        </div>
+    </c:forEach>
 </main>
 <jsp:include page="aside.jsp"/>
 <jsp:include page="footer.jsp"/>

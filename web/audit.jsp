@@ -1,16 +1,14 @@
-<%@ page import="edu.zjku.bean.Blog" %>
-<%@ page import="edu.zjku.service.BlogService" %>
-<%@ page import="java.util.List" %>
-<%@ page import="edu.zjku.service.BlogServiceImpl" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>审核博客</title>
     <link rel="stylesheet" href="style/public.css">
     <style>
-        main .box{
+        main .box {
             min-height: 200px;
         }
+
         .box p:nth-of-type(1) {
             text-align: center;
         }
@@ -28,27 +26,21 @@
 <body>
 <jsp:include page="header.jsp"/>
 <main>
-    <%
-        List<Blog> unpassBlogs = (List<Blog>) session.getAttribute("unpassBlogs");
-        for (Blog blog : unpassBlogs) {
-    %>
-    <div class="box">
-        <p><%=blog.getTitle()%>
-        </p>
-        <p><%=blog.getText()%>
-        </p>
-        <p><%=blog.getUser()%>
-        </p>
-        <p><%=blog.getTime()%>
-        </p>
-        <button data-pid="<%=blog.getPid()%>">通过</button>
-    </div>
-    <%}%>
+    <c:forEach var="blog" items="${unpassBlogs}">
+        <div class="box">
+            <p>${blog.title}</p>
+            <p>${blog.text}</p>
+            <p>作者：${blog.user}</p>
+            <p>时间：${blog.time}</p>
+            <button data-pid="${blog.pid}">通过</button>
+        </div>
+    </c:forEach>
 </main>
 <jsp:include page="footer.jsp"/>
 <script>
     //通过ajax实现点击按钮通过审核功能
     let buttons = document.querySelectorAll(".box button");
+
     //审核通过函数
     function allowBlog() {
         axios.get("/theBlog/allowServlet?pid=" + this.getAttribute("data-pid"))
@@ -66,7 +58,7 @@
 
     //循环添加事件
     for (let i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener("click",allowBlog);
+        buttons[i].addEventListener("click", allowBlog);
     }
 </script>
 </body>
