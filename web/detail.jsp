@@ -5,6 +5,7 @@
     <title>博客详情</title>
     <link rel="stylesheet" href="style/public.css"/>
     <link rel="stylesheet" href="style/form.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         .blog{
             white-space: pre-wrap;
@@ -31,7 +32,7 @@
     <%--获取博客及其评论--%>
     <div class="blog">
         <h2>${sessionScope.blogDetail.title}</h2>
-        <p>${sessionScope.blogDetail.text}</p>
+        <p id="content">${sessionScope.blogDetail.text}</p>
         <p>${sessionScope.blogDetail.user}</p>
         <p>${sessionScope.blogDetail.time}</p>
     </div>
@@ -51,5 +52,15 @@
 </main>
 <jsp:include page="aside.jsp"/>
 <jsp:include page="footer.jsp"/>
+<script>
+    //获取博客内容，使用markedjs替换成markdown
+    const blogContent = document.getElementById("content");
+    let blogHTML = blogContent.innerText;
+    function markdownContent(){
+        let blogMarkdown = marked.parse(blogHTML);
+        blogContent.innerHTML = blogMarkdown;
+    }
+    markdownContent();
+</script>
 </body>
 </html>

@@ -1,7 +1,3 @@
-<%@ page import="edu.zjku.service.BlogService" %>
-<%@ page import="edu.zjku.service.BlogServiceImpl" %>
-<%@ page import="java.util.List" %>
-<%@ page import="edu.zjku.bean.Blog" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
